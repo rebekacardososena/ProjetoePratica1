@@ -1,0 +1,191 @@
+/* --------- ARQUIVOS CSS - HOMEPAGE ------------- */
+
+:root {
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- CSS - BARRA DE ACESSIBILIDADE + DUVIDAS ---------- */
+
+.acess_b {
+  display: flex;
+  justify-content: space-evenly;
+  background: rgb(2, 2, 2);
+}
+
+.acess_b > li {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 11px;
+  list-style: none;
+}
+
+.acess_b > li > a {
+  color: rgb(255, 0, 0);
+  list-style: none;
+  text-decoration: none;
+}
+
+/* ---------- CSS - LOGO MARCA ---------- */
+
+.logo {
+  font-family: "Roboto", sans-serif;
+  font-size: 50px;
+  font-weight: 900;
+  padding: 25px 15px 5px 50px;
+  border-radius: 5px;
+  background-color: rgb(145, 4, 4);
+  box-shadow: 0px 3px 5px 0px #4e4d4d;
+}
+
+.logo > a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+/* ---------- CSS - NAV BAR ---------- */
+
+.nav_bar {
+  display: flex;
+  justify-content: space-around;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  text-align: center;
+  height: 130px;
+  width: 100%;
+  align-items: center;
+  background-color: #bbb6b6;
+}
+
+/* ---------- CSS - MENU DA NAV BAR ---------- */
+
+.menu_bar {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  height: 10px 20px;
+  padding: 10 5%;
+}
+
+.menu_bar > ul {
+  list-style: none;
+  display: flex;
+}
+
+.menu_bar > ul > li {
+  padding: 40px;
+  position: relative;
+}
+
+.menu_bar > ul > li > a {
+  color: rgb(145, 4, 4);
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.4s;
+}
+
+.menu_bar > ul > li > a:hover {
+  color: rgb(250, 0, 0);
+  transition: 0.4s;
+}
+
+.menu_bar > ul > li > a:hover {
+  color: rgb(253, 253, 253);
+}
+
+/* ---------- CSS - MENU DO DROPDOWN ---------- */
+
+.menu_dropdrown {
+  display: none;
+}
+
+.menu_bar > ul > li:hover .menu_dropdrown {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: #f77070d0;
+  border-radius: 5px;
+}
+
+.menu_bar > ul > li:hover .menu_dropdrown > ul {
+  display: block;
+  margin: 10px;
+}
+
+.cupon {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 8px;
+  color: #000000;
+}
+
+.menu_bar > ul > li:hover .menu_dropdrown > ul > li {
+  align-items: center;
+  width: 140px;
+  padding: 12px;
+  list-style: none;
+  align-items: center;
+}
+
+.menu_dropdrown > ul > li > a {
+  font-size: 16px;
+  color: rgb(145, 4, 4);
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.menu_dropdrown > ul > li > a:hover {
+  font-size: 22px;
+  color: rgb(253, 253, 253);
+  transition: 0.3s;
+}
+
+.fas {
+  float: right;
+  margin-left: 10px;
+  padding-top: 3px;
+}
+
+.login {
+  padding: 10px 50px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 900;
+  color: rgb(255, 255, 255);
+  background-color: #666565;
+  box-shadow: 0px 3px 2px 0px #4e4d4d;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  transition: 0.3s background;
+}
+
+.login:hover {
+  background-color: #000000;
+  transition: 0.4s background;
+}
+
+.cadastro {
+  padding: 10px 55px;
+  font-size: 15px;
+  font-weight: 900;
+  border: none;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  background-color: #ff0000;
+  box-shadow: 0px 3px 2px 0px #4e4d4d;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  transition: 0.3s background;
+}
+
+.cadastro:hover {
+  background-color: rgb(121, 0, 0);
+  transition: 0.4s background;
+}
