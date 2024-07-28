@@ -2,7 +2,7 @@
 Repositório destinado para Projeto e Prática Profissional IFPE
 
 <h2>📝 Descrição</h2>
-Temos como objetivo criar um E-commerce, para praticar o conhecimento adquirido nas aulas ministradas no IFPE campus Jaboatão dos Guararapes. 
+Temos como objetivo criar um E-commerce para praticar o conhecimento adquirido nas aulas ministradas no IFPE campus Jaboatão dos Guararapes. 
 Nosso E-commerce será desenvolvido com foco na usabilidade, segurança e eficiência, proporcionando uma experiência de compra agradável e fluida para os usuários, bem como uma gestão simplificada para os administradores.
 
 ## :hammer: Funcionalidades do projeto
