@@ -1,5 +1,5 @@
 # ProjetoePratica1
-Repositório destinado para Projeto e Prática Profissional IFPE
+Repositório destinado para Projeto e Prática Profissional IFPE.
 
 <h2>📝 Descrição</h2>
 Temos como objetivo criar um E-commerce para praticar o conhecimento adquirido nas aulas ministradas no IFPE campus Jaboatão dos Guararapes. 
