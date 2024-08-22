@@ -1,0 +1,116 @@
+/* --------- ARQUIVOS CSS - TENIS  ------------- */
+
+.container_card {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.folder_one {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+}
+
+.card {
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  border-top: solid;
+  border-width: 8px;
+  border-color: #910404;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.4);
+  padding: 25px 5px;
+  text-align: center;
+}
+
+.card img {
+  border-radius: 8px;
+}
+
+h1 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: 3em;
+  text-align: center;
+  color: red;
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: 1.2em;
+  text-align: center;
+  color: rgb(3, 1, 128);
+  padding: 12px;
+  margin: 0;
+}
+
+p {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-align: center;
+  color: rgb(8, 8, 8);
+  padding: 3px;
+  margin: 0;
+}
+
+#frete {
+  display: inline-block;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  background-color: rgba(255, 94, 0, 0.788);
+  width: 180px;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 12px;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.4);
+}
+
+#valorTotal {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: 1.2em;
+}
+
+#valorParcelado {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: .9em;
+  font-style: italic;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .folder_one {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 1em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  #frete {
+    width: 150px;
+    font-size: .8em;
+  }
+
+  #valorTotal {
+    font-size: 1.1em;
+  }
+
+  #valorParcelado {
+    font-size: .9em;
+  }
+}
