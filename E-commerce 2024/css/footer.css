@@ -1,0 +1,232 @@
+/* --------- CÓDIGO CSS - FOOTER ------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: "Roboto", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans";
+}
+
+/* --------- CÓDIGO CSS - FOOTER: FOOTER (GERAL) ------------- */
+
+.footer {
+    background-color: #000000;
+    padding: 60px 0px 40px 0px;
+    color: #ffffff;
+}
+
+.container_footer {
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-links {
+    flex: 1;
+    margin: 33px;
+    /*width: 260px; NÃO ALTERAR*/
+}
+
+.footer-links h4 {
+    text-align: center;
+    font-size: 1.3em;
+    border-bottom: 3px solid #910404;
+    border-radius: 0px 0px 5px 5px;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px #5a5757;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0px;
+    /*width: 250px; NÃO ALTERAR*/
+}
+
+.footer-links ul li {
+    text-align: center;
+    margin-bottom: 12px;
+    /*width: 250px; NÃO ALTERAR*/
+}
+
+.footer-links ul li a {
+    font-size: 1em;
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px #6d0101;
+    transition: .3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #910404;
+    padding-left: 5px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-around;
+    /*padding: 10px;   */
+    font-size: 2.75em;
+}
+
+.social-links li {
+    margin: 0 10px;
+}
+
+.social-links a {
+    align-items: center;
+    color: #333;
+    text-decoration: none;
+    transition: all .3s ease;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}
+
+/* Media Query para telas pequenas */
+@media (max-width: 900px) {
+    .footer-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links {
+        flex: none;
+        text-align: center;
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-links li {
+        margin: 10px 0;
+    }
+}
+
+/* Media Query para telas muito pequenas */
+@media (max-width: 480px) {
+    .footer-links h4 {
+        font-size: 1.2em;
+    }
+
+    .footer-links ul li {
+        font-size: 0.9em;
+    }
+}
+
+/* ---------- CÓDIGO CSS - FORMAS DE PAGAMENTO ---------- */
+
+.payments {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-container {
+    text-align: center;
+    max-width: 900px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #000000;
+}
+
+.payment-container h2 {
+    text-align: center;
+    font-size: 1.3em;
+    color: #ffffff;
+    border-bottom: 3px solid #910404;
+    border-radius: 0px 0px 5px 5px;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px #5a5757;
+}
+
+.payment-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.4);
+}
+
+.payment-card {
+    max-height: 3.5vh;
+    max-width: 50%;
+    border-radius: 4px;
+    transition: transform 0.3s;
+}
+
+.payment-card:hover {
+    transform: scale(1.2);
+}
+
+
+/* Media Query para dispositivos com largura de tela de até 768px */
+@media (max-width: 768px) {
+    .payment-container h2 {
+        font-size: 1.2em;
+    }
+
+    .payment-card {
+        max-height: 3.1vh;
+        max-width: 50%;
+    }
+}
+
+/* ---------- CÓDIGO CSS - COPYRIGHT ---------- */
+
+.copyright {
+    font-size: 0.9em;
+    background-color: #000000;
+    padding: 40px 0;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 2px #5a5757;
+}
+
+/* ---------- CÓDIGO CSS - DESENVOLVEDOR ---------- */
+
+.footerdev {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 8px;
+    text-align: center;
+}
+
+.footerdev p {
+    font-size: .9em;
+    font-weight: 400;
+    color: #000000;
+    text-decoration: none;
+}
+
+.footerdev a {
+    font-size: .9em;
+    font-weight: 400;
+    color: #d6a400;
+    text-decoration: none;
+}
+
+footerdev a:hover {
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    footerdev {
+        padding: 15px;
+    }
+
+    footerdev p {
+        font-size: 14px;
+    }
+}
