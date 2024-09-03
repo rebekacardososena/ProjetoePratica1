@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, max-scale=1.0">
+    <title> If.Shoes > Produtos </title>
+
+    <!--------------- ARQUIVO CSS - HOMEPAGE --------------->
+
+    <link rel="stylesheet" href="css/navbar.css">
+
+    <!---------- FONTE EXTERNO - CÓDIGO CSS: PÁGINA DE COMPRA ---------->
+
+    <link rel="stylesheet" href="css/produtos.css">
+
+    <!--------------- ARQUIVO CSS - FOOTER --------------->
+
+    <link rel="stylesheet" href="css/footer.css">
+
+    <!--------------- CDNJS - REDES SOCIAIS --------------->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!--------------- FONTE EXTERNO - GOOGLE (ROBOTO) --------------->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!--------------- CDNJS - SWIPER --------------->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+</head>
+
+<body>
+
+    <!--------------- INÍCIO DO CÓDIGO - HTML: CABEÇALHO DA PÁGINA --------------->
+
+    <header>
+
+        <div>
+            <ul class="acess_b">
+                <li><a href="#"> Acessibilidade </a></li>
+                <li><a href="#"> Tire as duvidas? </a></li>
+            </ul>
+        </div>
+
+        <div class="container_bar1">
+
+            <div class="navbar">
+                <a href="index.html" class="logo">IF.SHOES</a>
+            </div>
+        </div>
+
+    </header>
+
+    <hr>
+
+    <!--------------- FIM DO CÓDIGO - HTML: CABEÇALHO DA PÁGINA --------------->
+
+    <main container-compra>
+
+        <!--------------- INÍCIO DO CÓDIGO - HTML: PAGINA DE COMPRA --------------->
+
+        <div class="container" id="buyPage">
+            <div class="product-gallery">
+                <div class="product-images">
+                    <img class="thumbnail-images-geral" id="main-image"
+                        src="img/tenis/adidas/Tênis Adidas Dame Certified Masculino.png"
+                        alt="Imagem principal do sapato">
+                    <div class="thumbnail-images">
+                        <img src="img/tenis/adidas/Tênis Adidas Dame Certified Masculino 1.png" alt="Imagem 1"
+                            onclick="changeImage('/img/tenis/adidas/Tênis Adidas Dame Certified Masculino 1.png')">
+                        <img src="img/tenis/adidas/Tênis Adidas Dame Certified Masculino 2.png" alt="Imagem 2"
+                            onclick="changeImage('/img/tenis/adidas/Tênis Adidas Dame Certified Masculino 2.png')">
+                        <img src="img/tenis/adidas/Tênis Adidas Dame Certified Masculino 3.png" alt="Imagem 3"
+                            onclick="changeImage('/img/tenis/adidas/Tênis Adidas Dame Certified Masculino 3.png')">
+                        <img src="img/tenis/adidas/Tênis Adidas Dame Certified Masculino 4.png" alt="Imagem 4"
+                            onclick="changeImage('/img/tenis/adidas/Tênis Adidas Dame Certified Masculino 4.png')">
+                        <img src="img/tenis/adidas/Tênis Adidas Dame Certified Masculino 5.png" alt="Imagem 5"
+                            onclick="changeImage('/img/tenis/adidas/Tênis Adidas Dame Certified Masculino 5.png')">
+                    </div>
+                </div>
+
+                <div class="product-info">
+                    <h1>Marca: Adidas</h1>
+                    <h1>Modelo: Tênis Adidas Dame Certified</h1>
+                    <p class="codigo">Código: <span id="product-code"
+                            style="background-color: #ff9d00af; border-radius: 3px;"> 123456 </span></p>
+
+                    <label for="gender">Gênero:</label>
+                    <select id="gender">
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="unissex">Unissex</option>
+                    </select>
+
+                    <label for="color">Cor:</label>
+                    <select id="color">
+                        <option value="preto">Preto</option>
+                        <option value="branco">Branco</option>
+                        <option value="vermelho">Vermelho</option>
+                    </select>
+
+                    <label for="size">Tamanho:</label>
+                    <select id="size">
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                    </select>
+
+                    <label for="amount">Quantidade:</label>
+                    <input type="number" id="amount" name="quantidade" min="1" max="10" value="1"
+                        onchange="updatePrice()">
+
+                    <p class="valorTotal">De: <span id="price-original" style="text-decoration: line-through;">R$ 719,90
+                            reais</span></p>
+                    <p class="valorDesconto">Por: <span id="price-discount" style="color: red;">R$ 719,90 reais</span>
+                    </p>
+                    <p class="valorDescontoA" id="discount-message" style="display: none;"></p>
+                    <p class="valorParcelado" id="installment-info" style="display: none;">Ou <span
+                            id="installments-count">10x</span>:
+                        <span id="installment">R$ 71,90 reais</span>
+                    </p>
+                    <p class="valorParcelado">Parcelamos em 10 vezes, sem juros!</p>
+
+                    <label for="payment-method">Forma de Pagamento:</label>
+                    <select id="payment-method" onchange="updateInstallments()">
+                        <option value="boleto">Boleto</option>
+                        <option value="PIX">PIX</option>
+                        <option value="avista">À Vista</option>
+                        <option value="parcelado">Parcelado</option>
+                    </select>
+
+                    <label for="installments">Número de Parcelas:</label>
+                    <select id="installments" disabled onchange="updatePrice()">
+                        <option value="1">1x</option>
+                        <option value="2">2x</option>
+                        <option value="3">3x</option>
+                        <option value="4">4x</option>
+                        <option value="5">5x</option>
+                        <option value="6">6x</option>
+                        <option value="7">7x</option>
+                        <option value="8">8x</option>
+                        <option value="9">9x</option>
+                        <option value="10">10x</option>
+                    </select>
+
+                    <div class="actions">
+                        <button id="buy-now">FINALIZAR!</button>
+                        <button id="save-cart">DEIXAR NO CARRINHO?</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="product-info-details">
+                <h1>Informações do Produto:</h1>
+                <p>Tênis Adidas Dame Certified Masculino. Este é um produto oriiginal Adidas com garantia vendido pela
+                    B2 Online. Este tênis foi feito para atletas profissionais ou amadores. Ele é confortável e leve,
+                    sem esquecer do
+                    amortecimento que você precisa para conquistar melhores resultados e evitar lesões. Ele é um tênis
+                    para basquete de rua ou nas quadras. Brilhe muito mais nas quadras acompanhado do tênis Dame
+                    Certified. O Adidas Dame Certified foi feito com alta tecnologia, projetado para o melhor
+                    desempenho. Aterrisagens ultra macias com alto retorno de energia para a próxima jogada.
+                    <br /><br />
+                    Indicado para: Basquete.
+                    <br />
+                    Categoria: Performance / Academia / Quadras.<br />
+                    Terreno: Quadras Indor.
+                    <br /><br />
+                    • Modelo com cadarço para melhor ajuste no pé.<br />
+                    • Feito com mistura de materiais leves e duráveis e forro têxtil.<br />
+                    • Entressola Bounce™: Sistema de amortecimento ao longo do calçado que gera impulso, permitindo
+                    retorno da energia otimizada às
+                    passadas em treinos mais longos e com menos esforço.<br />
+                    • Sensação de amortecimento.<br />
+                    • Solado de borracha para maior aderência ao solo.<br />
+                    • Quadra Rápida.<br />
+                    • Importado.<br />
+                    <br />
+                    Foto do produto condiz com a realidade. Não existe variação significativa de cor entre o produto
+                    real e a foto. Edição realizada em programa gráfico para aproximar ao máximo a foto a cor real do
+                    produto. Você pode solicitar a troca sem custo em até 30 dias. Sem custos para devolução. Compra
+                    garantida. Caso queira
+                    devolver você pode solicitar o reembolso do valor pago em até 7 dias a contar do recebimento.
+                </p>
+            </div>
+
+        </div>
+
+        <!--------------- FIM DO CÓDIGO - HTML: PAGINA DE COMPRA --------------->
+
+    </main>
+
+    <hr>
+
+    <!--------------- FIM DO CÓDIGO - HTML: BARRA DE INFORMAÇÃO (FRETE GRATIS) --------------->
+
+    <!--------------- INÍCIO DO CÓDIGO - HTML: FOOTER (RODAPÉ DA PAGINA) --------------->
+
+    <!--
+    <footer class="footer">
+    
+    </footer>
+    -->
+
+    <h4 class="copyright">Copyright &copy; 2024 | TODOS OS DIREITOS RESERVADOS. </h4>
+
+    <div class="footerdev">
+        <p>Desenvolvido por <a href="https://api.whatsapp.com/send?phone=numbercel"> ########### </a></p>
+    </div>
+
+    <!--------------- FIM DO CÓDIGO - HTML: FOOTER (RODAPÉ DA PAGINA) --------------->
+
+    <script src="js/produtos.js"></script>
+    <script src="js/CalcularCompra.js"></script>
+
+
+</body>
+
+</html>
