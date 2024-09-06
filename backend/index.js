@@ -311,9 +311,27 @@ app.post('/produtos/cadastrar', (req, res) => {
     const { titulo, descricao, preco, id_user, id_categoria } = req.body;
 
     // Validação dos campos obrigatórios
-    if (!titulo || !preco || !id_user || !id_categoria) {
+    if (!titulo) {
         return res.status(422).json({
-            message: "Título, preço, ID do usuário e ID da categoria são obrigatórios"
+            message: "Precisa preencher o campo titulo"
+        });
+    }
+
+    if(!preco){
+        return res.status(422).json({
+            message: "Precisa preencher o campo preço"
+        });
+    }
+
+    if(!id_user){
+        return res.status(422).json({
+            message: "Precisa do id do vendedor"
+        });
+    }
+
+    if(!id_categoria){
+        return res.status(422).json({
+            message: "Precisa do id da categoria"
         });
     }
 
