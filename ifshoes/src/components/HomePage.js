@@ -1,14 +1,31 @@
-// src/components/HomePage.js
+// src/App.js
 import React from 'react';
-//import './HomePage.css'; // Adicione seu CSS aqui
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import HomePage from './components/HomePage';
+import Login from './components/Login';
+import Signup from './components/Signup';
 
-const HomePage = () => {
+function App() {
   return (
-    <div>
-      <h1>Bem-vindo à Homepage</h1>
-      {/* Adicione o resto do seu HTML aqui */}
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Login">Login</a></li>
+            <li><a href="/Signup">Signup</a></li>
+          </ul>
+        </nav>
+        <Switch>
+          <Route path="/HomePage" exact component={HomePage} />
+          <Route path="/Login" component={Login} />
+          <Route path="/Signup" component={Signup} />
+          
+        </Switch>
+      </div>
+    </Router>
   );
-};
+}
 
-export default HomePage;
+export default App;
+
