@@ -1,0 +1,485 @@
+/* --------- ARQUIVOS CSS - TENIS  ------------- */
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Roboto", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  }
+  
+  .container_main {
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+  
+  .container_geral {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    /* Obs: Configuração Original: space-around; */
+    padding: 15px;
+    gap: 15px;
+  }
+  
+  
+  /* --------- ARQUIVOS CSS - ABRE A PAGINA DE COMPRA  ------------- */
+  
+  .buy-page {
+    display: none;
+    /* Inicialmente oculta */
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.568);
+    color: #fff;
+    padding-top: 120px;
+    box-sizing: border-box;
+    text-shadow: 1px 1px 1px #5a5757c7;
+  }
+  
+  .buy-page form {
+    font-size: .9em;
+    text-align: justify;
+    padding: 10px;
+    padding-bottom: 13px;
+    background-color: #cecece;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+  }
+  
+  
+  .buy-page form>.quantComprada {
+    font-family: "Roboto", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    font-size: .9em;
+    text-shadow: 1px 1px 1px #5a5757c7;
+    padding: 5px;
+    text-transform: uppercase;
+  }
+  
+  .buy-page form>.formPagamento {
+    font-family: "Roboto", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    font-size: .9em;
+    text-shadow: 1px 1px 1px #5a5757c7;
+    padding: 5px;
+    text-transform: uppercase;
+  }
+  
+  .buy-page form>.numParcelas {
+    font-family: "Roboto", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    font-size: .9em;
+    text-shadow: 1px 1px 1px #5a5757c7;
+    padding: 5px;
+    text-transform: uppercase;
+  }
+  
+  .buy-page .valorTotal {
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+  
+  .buy-page .valorDesconto {
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+  
+  .buy-page .valorDescontoA {
+    font-size: 1em;
+    padding-bottom: 10px;
+    color: #ff0000;
+  }
+  
+  .buy-page label,
+  input,
+  select {
+    font-size: 0.9em;
+    padding: 5px;
+    font-family: "Roboto", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  }
+  
+  .buy-page h2 {
+    font-size: 1.2em;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px #5a5757c7;
+  }
+  
+  .buy-page p {
+    font-size: 0.9em;
+    text-align: justify;
+    padding: 5px;
+    font-family: "Roboto", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    text-shadow: 1px 1px 1px #5a5757c7;
+  }
+  
+  .buy-page.active {
+    display: block;
+  }
+  
+  .buy-page-content {
+    background: #fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 600px;
+    margin: 0 auto;
+    border-top: 15px solid #910404;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
+  }
+  
+  .buy-page .actions {
+    align-items: center;
+  }
+  
+  .actions button {
+    color: #ffffff;
+    font-size: 1em;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 12px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  #finalizarComprar {
+    background-color: #910404;
+  }
+  
+  #finalizarComprar:hover {
+    font-weight: bold;
+    background-color: #ff0000;
+  }
+  
+  #fixarCarrinho {
+    background-color: #0e4279;
+  }
+  
+  #fixarCarrinho:hover {
+    font-weight: bold;
+    background-color: #0095ff;
+  }
+  
+  .buy-page .close {
+    position: absolute;
+    top: 17px;
+    right: 17px;
+    background: #910404;
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 800;
+    border-radius: 100px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  
+  /*
+  
+  .card {
+    /*flex: 150px; Obs: Configuração Original: 1 1 150px */
+    /*
+    max-width: 420px;
+    border-radius: 5px;
+    border: 1px solid #838383;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
+    border-top: 10px solid #910404;
+    margin: 6px;
+    padding: 30px 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .card:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+  
+  .card img {
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0px 5px 5px #000000);
+  }
+  
+  .card img:hover {
+    transform: scale(1.3);
+    filter: drop-shadow(0px 5px 5px #910404);
+    cursor: pointer;
+  }
+  
+  h2 {
+    font-size: 1em;
+    text-align: center;
+    color: #000000;
+    padding: 12px;
+    margin: 0;
+    text-shadow: 1px 1px 1px #5a5757c7;
+  }
+  
+  p {
+    font-size: .9em;
+    font-weight: 300;
+    text-align: center;
+    color: #000000;
+    padding: 3px;
+    margin: 0;
+    text-shadow: 1px 1px 1px #5a5757c7;
+  }
+  
+  .marcaModelo {
+    font-size: 1em;
+    font-weight: bold;
+  }
+  
+  .generoPessoal {
+    font-size: 0.9em;
+  }
+  
+  .codigoProduto {
+    font-size: 0.7em;
+  }
+  
+  .frete {
+    display: inline-block;
+    width: 160px;
+    background-color: rgba(255, 94, 0, 0.66);
+    border-radius: 4px;
+    font-weight: 500;
+    text-shadow: 1px 1px 1px #5a5757c7;
+    margin: 12px 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+  }
+  
+  .valorTotal {
+    font-size: 1.2em;
+    font-weight: 500;
+    text-shadow: 1px 1px 1px #5a5757c7;
+  }
+  
+  .valorParcelado {
+    font-style: italic;
+    text-shadow: 1px 1px 1px #5a5757c7;
+  }
+  
+  /* Container dos botões */
+  /*
+  .button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  
+  .button-comprar,
+  .button-adicionar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  
+  
+  /* Estilos dos botões */
+  /*
+  .button-comprar .btn {
+    padding: 6px 28px;
+    border: none;
+    border-radius: 4px 0px 0px 4px;
+    cursor: pointer;
+    font-size: 0.7em;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+    text-shadow: 1px 1px 1px #5a5757c7;
+  }
+  */
+  
+  /* Estilos do botão Comprar Agora */
+  .buy-button {
+    padding: 6px 28px;
+    border: none;
+    border-radius: 4px 0px 0px 4px;
+    cursor: pointer;
+    font-size: 0.7em;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+    text-shadow: 1px 1px 1px #5a5757c7;
+    background-color: #910404;
+  }
+  
+  .buy-button:hover {
+    background-color: #ff0000;
+    font-weight: 900;
+  }
+  
+  
+  /* Estilos do botão Adiciona Agora */
+  /*
+  .button-adicionar .btn {
+    padding: 6px 28px;
+    border: none;
+    border-radius: 0px 4px 4px 0px;
+    cursor: pointer;
+    font-size: 0.7em;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+    text-shadow: 1px 1px 1px #5a5757c7;
+  }
+  
+  /* Estilos do botão Comprar Agora */
+  /*
+  .buy-now {
+    background-color: #910404;
+  }
+  
+  .buy-now:hover {
+    background-color: #ff0000;
+    font-weight: 900;
+  }
+  */
+  
+  /* Estilos do botão Adicionar ao Carrinho */
+  .add-to-cart {
+    background-color: #0e4279;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #0095ff;
+    font-weight: 900;
+  }
+  
+  
+  /*
+  .saibaMais a {
+    font-size: .85em;
+    font-weight: 600;
+    color: #000000;
+  }
+  
+  .saibaMais a:hover {
+    font-weight: 600;
+    color: #000000;
+    padding-bottom: 3.5px;
+    border-bottom: solid 2px #000000;
+  }
+  */
+  
+  
+  /* Media Query para dispositivos com largura máxima de 800px */
+  @media (max-width: 800px) {
+  
+    h2 {
+      font-size: 1.2em;
+    }
+  
+    .frete {
+      width: 340px;
+      font-size: 1.4em;
+    }
+  
+    .saibaMais a {
+      font-size: 1.2em;
+    }
+  
+    .saibaMais a:hover {
+      font-weight: 700;
+    }
+  
+    .valorTotal {
+      font-weight: 800;
+      font-size: 1.55em;
+    }
+  
+    .valorParcelado {
+      font-size: .85em;
+    }
+  
+    .folder_one {
+      justify-content: center;
+      /* Centraliza os cards em telas menores */
+    }
+  
+    .card {
+      flex: 1 1 75%;
+      /* Faz com que os cards ocupem toda a largura disponível */
+      margin: 10px 0;
+      /* Margem superior e inferior em vez de lateral */
+    }
+  
+    .card img {
+      width: 250px;
+      height: 250px;
+    }
+  
+    .marcaModelo {
+      font-size: 1.55em;
+      font-weight: bold;
+    }
+  
+    .generoPessoal {
+      font-size: 1.2em;
+    }
+  
+    .codigoProduto {
+      font-size: 1em;
+    }
+  
+  
+    /* Estilos dos botões */
+    .button-comprar .btn {
+      padding: 8px 50px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95em;
+    }
+  
+    .buy-button {
+      padding: 8px 50px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95em;
+    }
+  
+    .button-adicionar .btn {
+      padding: 8px 45px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95em;
+    }
+  }
+  
+  .blink {
+    animation: blink 1s steps(1, end) infinite;
+  }
+  
+  @keyframes blink {
+  
+    0%,
+    100% {
+      opacity: 1;
+    }
+  
+    50% {
+      opacity: 0;
+    }
+  }
