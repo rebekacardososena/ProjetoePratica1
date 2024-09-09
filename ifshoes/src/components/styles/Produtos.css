@@ -1,0 +1,15 @@
+.produtos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .produto {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 300px;
+  }
+  
+  .produto h2 {
+    margin-top: 0;
+  }

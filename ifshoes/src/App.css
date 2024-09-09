@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+.App {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Importe os estilos dos produtos */
+@import './styles/Produtos.css';
