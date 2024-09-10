@@ -5,8 +5,9 @@ const pool = require('./db/conn')
 
 app.use(express.json())
 
+  
 app.post('/user/register', async (req, res) => {
-    const { nome, sobreNome, phone, email, senha } = req.body;
+    const { nome, sobreNome, phone, email, senha, cep, rua, cidade, uf } = req.body;
 
     if(!nome){
         res.status(422)
@@ -48,6 +49,75 @@ app.post('/user/register', async (req, res) => {
         return
     }
 
+    try {
+        const checkEmailSql = "SELECT email FROM users WHERE email = ? LIMIT 1";
+        pool.query(checkEmailSql, [email], async (err, results) => {
+            if (err) {
+                console.log(err);
+                return res.status(500).json({
+                    message: "Erro ao consultar o banco de dados",
+                    error: err
+                });
+            }
+
+            if (results.length > 0) {
+                return res.status(409).json({
+                    message: "Email já registrado"
+                });
+            }
+
+            const salt = await bcrypt.genSalt(10);
+            const hashedPassword = await bcrypt.hash(senha, salt);
+
+            const insertUserSql = "INSERT INTO users (nome, sobrenome, phone, email, senha) VALUES (?, ?, ?, ?, ?)";
+            const dados = [nome, sobreNome, phone, email, hashedPassword];
+
+            pool.query(insertUserSql, dados, (err, result) => {
+                if (err) {
+                    console.log(err);
+                    return res.status(500).json({
+                        message: "Erro ao registrar usuário",
+                        error: err
+                    });
+                }
+
+                const userId = result.insertId; // Captura o ID do usuário registrado
+
+                // Inserir endereço
+                const insertEnderecoSql = `
+                    INSERT INTO endereco (cep, rua, cidade, uf, id_user)
+                    VALUES (?, ?, ?, ?, ?)
+                `;
+                const enderecoDados = [cep, rua, cidade, uf, userId];
+
+                pool.query(insertEnderecoSql, enderecoDados, (err) => {
+                    if (err) {
+                        console.log(err);
+                        return res.status(500).json({
+                            message: "Erro ao salvar o endereço",
+                            error: err
+                        });
+                    }
+
+                    res.status(201).json({
+                        message: "Registrado com sucesso e endereço salvo!",
+                        userId: userId
+                    });
+                });
+            });
+        });
+    } catch (err) {
+        res.status(500).json({
+            message: "Erro ao processar a senha",
+            error: err
+        });
+    }
+});
+
+app.post('/user/register', async (req, res) => {
+    const { nome, sobreNome, phone, email, senha } = req.body;
+
+  
     try {
         // Verificar se o email já existe
         const checkEmailSql = "SELECT email FROM users WHERE email = ? LIMIT 1";
