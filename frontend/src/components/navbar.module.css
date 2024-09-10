@@ -1,0 +1,36 @@
+.Navbar{
+    background-color: #FF9671;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    top: 0;
+}
+.link{
+    text-decoration: none;
+    margin: .8em;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(85, 26, 139);
+}
+.logo_Navbar{
+    margin-left: .8em;
+   display: flex;
+   align-items: center;
+}
+.logo_Navbar img{
+    width: 40px;
+    margin-right: .8em;
+}
+.logo_Navbar h2{
+    color: #845EC2;
+    text-decoration: underline;
+}
+.linkNavbar{
+    margin-left: .8em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    list-style-type: none;
+}
