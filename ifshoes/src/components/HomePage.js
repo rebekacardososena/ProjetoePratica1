@@ -1,31 +1,19 @@
-// src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import HomePage from './components/HomePage';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Homepage from './components/HomePage';
 import Login from './components/Login';
-import Signup from './components/Signup';
+import Cadastro from './components/Cadastro';
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/Login">Login</a></li>
-            <li><a href="/Signup">Signup</a></li>
-          </ul>
-        </nav>
-        <Switch>
-          <Route path="/HomePage" exact component={HomePage} />
-          <Route path="/Login" component={Login} />
-          <Route path="/Signup" component={Signup} />
-          
-        </Switch>
-      </div>
-    </Router>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/cadastro" element={<Cadastro />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
-
