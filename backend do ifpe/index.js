@@ -1,13 +1,12 @@
 const express = require('express')
 const app = express()
 const bcrypt = require('bcrypt')
-const pool = require('./db/conn')
+const db = require('./db/conn')
 
 app.use(express.json())
 
-  
 app.post('/user/register', async (req, res) => {
-    const { nome, sobreNome, phone, email, senha, cep, rua, cidade, uf } = req.body;
+    const { nome, sobreNome, phone, email, senha } = req.body;
 
     if(!nome){
         res.status(422)
@@ -50,78 +49,9 @@ app.post('/user/register', async (req, res) => {
     }
 
     try {
-        const checkEmailSql = "SELECT email FROM users WHERE email = ? LIMIT 1";
-        pool.query(checkEmailSql, [email], async (err, results) => {
-            if (err) {
-                console.log(err);
-                return res.status(500).json({
-                    message: "Erro ao consultar o banco de dados",
-                    error: err
-                });
-            }
-
-            if (results.length > 0) {
-                return res.status(409).json({
-                    message: "Email já registrado"
-                });
-            }
-
-            const salt = await bcrypt.genSalt(10);
-            const hashedPassword = await bcrypt.hash(senha, salt);
-
-            const insertUserSql = "INSERT INTO users (nome, sobrenome, phone, email, senha) VALUES (?, ?, ?, ?, ?)";
-            const dados = [nome, sobreNome, phone, email, hashedPassword];
-
-            pool.query(insertUserSql, dados, (err, result) => {
-                if (err) {
-                    console.log(err);
-                    return res.status(500).json({
-                        message: "Erro ao registrar usuário",
-                        error: err
-                    });
-                }
-
-                const userId = result.insertId; // Captura o ID do usuário registrado
-
-                // Inserir endereço
-                const insertEnderecoSql = `
-                    INSERT INTO endereco (cep, rua, cidade, uf, id_user)
-                    VALUES (?, ?, ?, ?, ?)
-                `;
-                const enderecoDados = [cep, rua, cidade, uf, userId];
-
-                pool.query(insertEnderecoSql, enderecoDados, (err) => {
-                    if (err) {
-                        console.log(err);
-                        return res.status(500).json({
-                            message: "Erro ao salvar o endereço",
-                            error: err
-                        });
-                    }
-
-                    res.status(201).json({
-                        message: "Registrado com sucesso e endereço salvo!",
-                        userId: userId
-                    });
-                });
-            });
-        });
-    } catch (err) {
-        res.status(500).json({
-            message: "Erro ao processar a senha",
-            error: err
-        });
-    }
-});
-
-app.post('/user/register', async (req, res) => {
-    const { nome, sobreNome, phone, email, senha } = req.body;
-
-  
-    try {
         // Verificar se o email já existe
         const checkEmailSql = "SELECT email FROM users WHERE email = ? LIMIT 1";
-        pool.query(checkEmailSql, [email], async (err, results) => {
+        db.query(checkEmailSql, [email], async (err, results) => {
             if (err) {
                 console.log(err);
                 return res.status(500).json({
@@ -145,7 +75,7 @@ app.post('/user/register', async (req, res) => {
             const insertUserSql = "INSERT INTO users (nome, sobrenome, phone, email, senha) VALUES (?, ?, ?, ?, ?)";
             const dados = [nome, sobreNome, phone, email, hashedPassword];
 
-            pool.query(insertUserSql, dados, (err) => {
+            db.query(insertUserSql, dados, (err) => {
                 if (err) {
                     console.log(err);
                     return res.status(500).json({
@@ -179,7 +109,7 @@ app.post('/user/login', (req, res) => {
     const sql = "SELECT senha FROM users WHERE email = ? LIMIT 1";
     const dados = [email];
 
-    pool.query(sql, dados, (error, results) => {
+    db.query(sql, dados, (error, results) => {
         if (error) {
             return res.status(500).json({
                 message: "Erro ao consultar o banco de dados",
@@ -234,7 +164,7 @@ app.put('/user/:id', async (req, res) => {
         const sql = "UPDATE users SET nome = ?, sobrenome = ?, phone = ?, email = ?, senha = ? WHERE id_user = ?";
         const dados = [nome, sobreNome, phone, email, hashedPassword, id];
 
-        pool.query(sql, dados, (err, result) => {
+        db.query(sql, dados, (err, result) => {
             if (err) {
                 console.log(err);
                 return res.status(500).json({
@@ -280,7 +210,7 @@ app.delete('/user/:id', (req, res) => {
     const dados = [id];
 
     // Executa a consulta SQL para deletar o usuário
-    pool.query(sql, dados, (err, result) => {
+    db.query(sql, dados, (err, result) => {
         
         // Se ocorrer um erro durante a execução da consulta, retorna um erro 500
         if (err) {
@@ -326,7 +256,7 @@ app.get('/', (req, res) => {
         LEFT JOIN users u ON p.id_user = u.id_user
     `;
 
-    pool.query(sql, (err, results) => {
+    db.query(sql, (err, results) => {
         if (err) {
             console.log(err);
             return res.status(500).json({
@@ -359,7 +289,7 @@ app.post('/produtos/cadastrar', (req, res) => {
 
     const dados = [titulo, descricao, preco, id_user, id_categoria];
 
-    pool.query(sql, dados, (err, result) => {
+    db.query(sql, dados, (err, result) => {
         if (err) {
             console.log(err);
             return res.status(500).json({
@@ -381,27 +311,9 @@ app.post('/produtos/cadastrar', (req, res) => {
     const { titulo, descricao, preco, id_user, id_categoria } = req.body;
 
     // Validação dos campos obrigatórios
-    if (!titulo) {
+    if (!titulo || !preco || !id_user || !id_categoria) {
         return res.status(422).json({
-            message: "Precisa preencher o campo titulo"
-        });
-    }
-
-    if(!preco){
-        return res.status(422).json({
-            message: "Precisa preencher o campo preço"
-        });
-    }
-
-    if(!id_user){
-        return res.status(422).json({
-            message: "Precisa do id do vendedor"
-        });
-    }
-
-    if(!id_categoria){
-        return res.status(422).json({
-            message: "Precisa do id da categoria"
+            message: "Título, preço, ID do usuário e ID da categoria são obrigatórios"
         });
     }
 
@@ -415,7 +327,7 @@ app.post('/produtos/cadastrar', (req, res) => {
     const dados = [titulo, descricao, preco, id_user, id_categoria];
 
     // Executar a consulta
-    pool.query(sql, dados, (err, result) => {
+    db.query(sql, dados, (err, result) => {
         if (err) {
             console.error("Erro ao cadastrar o produto:", err);
             return res.status(500).json({
@@ -430,111 +342,6 @@ app.post('/produtos/cadastrar', (req, res) => {
             produtoId: result.insertId
         });
     });
-});
-
-app.post('/carrinho/adicionar', (req, res) => {
-const { id_user, id_produto, quantidade } = req.body;
-
-if (!id_user || !id_produto || quantidade == null) {
-    return res.status(422).json({
-        message: "ID do usuário, ID do produto e quantidade são obrigatórios"
-    });
-}
-
-// Iniciar uma transação para garantir a integridade dos dados
-pool.getConnection((err, connection) => {
-    if (err) {
-        console.error("Erro ao conectar ao banco de dados:", err);
-        return res.status(500).json({
-            message: "Erro ao conectar ao banco de dados",
-            error: err
-        });
-    }
-
-    connection.beginTransaction((err) => {
-        if (err) {
-            connection.release();
-            console.error("Erro ao iniciar a transação:", err);
-            return res.status(500).json({
-                message: "Erro ao iniciar a transação",
-                error: err
-            });
-        }
-
-        // Verificar se o carrinho já existe para o usuário
-        const checkCarrinhoSql = "SELECT id_carrinho FROM carrinho WHERE id_user = ? LIMIT 1";
-        connection.query(checkCarrinhoSql, [id_user], (err, results) => {
-            if (err) {
-                connection.rollback(() => connection.release());
-                console.error("Erro ao verificar o carrinho:", err);
-                return res.status(500).json({
-                    message: "Erro ao verificar o carrinho",
-                    error: err
-                });
-            }
-
-            let carrinhoId;
-
-            if (results.length > 0) {
-                // Carrinho existe
-                carrinhoId = results[0].id_carrinho;
-            } else {
-                // Criar um novo carrinho
-                const createCarrinhoSql = "INSERT INTO carrinho (id_user) VALUES (?)";
-                connection.query(createCarrinhoSql, [id_user], (err, result) => {
-                    if (err) {
-                        connection.rollback(() => connection.release());
-                        console.error("Erro ao criar o carrinho:", err);
-                        return res.status(500).json({
-                            message: "Erro ao criar o carrinho",
-                            error: err
-                        });
-                    }
-
-                    carrinhoId = result.insertId;
-
-                    // Adicionar o produto ao carrinho
-                    addProdutoAoCarrinho(carrinhoId);
-                });
-            }
-
-            if (carrinhoId) {
-                // Adicionar o produto ao carrinho
-                addProdutoAoCarrinho(carrinhoId);
-            }
-
-            function addProdutoAoCarrinho(carrinhoId) {
-                const addProdutoSql = "INSERT INTO carrinho_produto (id_carrinho, id_produto, quantidade) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE quantidade = quantidade + VALUES(quantidade)";
-                connection.query(addProdutoSql, [carrinhoId, id_produto, quantidade], (err) => {
-                    if (err) {
-                        connection.rollback(() => connection.release());
-                        console.error("Erro ao adicionar o produto ao carrinho:", err);
-                        return res.status(500).json({
-                            message: "Erro ao adicionar o produto ao carrinho",
-                            error: err
-                        });
-                    }
-
-                    connection.commit((err) => {
-                        if (err) {
-                            connection.rollback(() => connection.release());
-                            console.error("Erro ao confirmar a transação:", err);
-                            return res.status(500).json({
-                                message: "Erro ao confirmar a transação",
-                                error: err
-                            });
-                        }
-
-                        connection.release();
-                        res.status(201).json({
-                            message: "Produto adicionado ao carrinho com sucesso!"
-                        });
-                    });
-                });
-            }
-        });
-    });
-});
 });
 
 
