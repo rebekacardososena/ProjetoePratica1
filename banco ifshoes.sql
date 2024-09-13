@@ -54,3 +54,18 @@ CREATE TABLE pedido_produto (
     FOREIGN KEY (id_produto) REFERENCES produto(id_produto),
     PRIMARY KEY (id_pedido, id_produto)
 );
+
+CREATE TABLE carrinho (
+    id_carrinho INT PRIMARY KEY AUTO_INCREMENT,
+    id_user INT,
+    FOREIGN KEY (id_user) REFERENCES users(id_user)
+);
+
+CREATE TABLE carrinho_produto (
+    id_carrinho INT,
+    id_produto INT,
+    quantidade INT NOT NULL,
+    FOREIGN KEY (id_carrinho) REFERENCES carrinho(id_carrinho),
+    FOREIGN KEY (id_produto) REFERENCES produto(id_produto),
+    PRIMARY KEY (id_carrinho, id_produto)
+);
