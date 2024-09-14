@@ -1,0 +1,74 @@
+
+
+
+@charset "utf-8";
+
+@font-face {
+    font-family: "minhaFont";
+    src: url("/font/Roboto-Regular.ttf") format("truetype");
+    src: url("/font/MerriweatherSans-VariableFont_wght.ttf") format("truetype");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;900&display=swap');
+
+/* 
+
+----------------------------
+
+FONTES DE TEXTOS
+
+font-family: 'Roboto', sans-serif;
+font-family: 'Merriweather', serif;
+
+--------------------------
+
+PALETAS DE CORES - CSS ( RGB )
+
+
+#ff0000;
+#910404;
+#020202;
+#fffffe;
+#333333;
+#d8a600;
+#e59c00;
+#707070;
+#c2bebe;
+#007bff;
+#024892;
+#b6b6b6;
+#c5c5c5;
+#000000;
+
+
+--------------------------
+
+*/
+
+.container_barrainfo {
+    max-width: 1460px;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #910404;
+    padding: 50px 14px;
+    font-family: "Roboto", "Merriweather", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.container_barrainfo h1 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 3em;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #5a5757;
+}
+
+.container_barrainfo p {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #ebc90c;
+    text-shadow: 1px 1px 2px #5a5757;
+}

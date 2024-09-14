@@ -1,0 +1,85 @@
+
+
+@charset "utf-8";
+
+@font-face {
+    font-family: "minhaFont";
+    src: url("/font/Roboto-Regular.ttf") format("truetype");
+    src: url("/font/MerriweatherSans-VariableFont_wght.ttf") format("truetype");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;900&display=swap');
+
+/* 
+
+----------------------------
+
+FONTES DE TEXTOS
+
+font-family: 'Roboto', sans-serif;
+font-family: 'Merriweather', serif;
+
+--------------------------
+
+PALETAS DE CORES - CSS ( RGB )
+
+
+#ff0000;
+#910404;
+#020202;
+#fffffe;
+#333333;
+#d8a600;
+#e59c00;
+#707070;
+#c2bebe;
+#007bff;
+#024892;
+#b6b6b6;
+#c5c5c5;
+#000000;
+
+
+--------------------------
+
+*/
+
+
+/* --------- ARQUIVOS CSS - WHATSAPP  ------------- */
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 25px;
+    z-index: 1000;
+    /* Para garantir que o ícone esteja sempre visível */
+}
+
+.whatsapp-icon img {
+    width: 70px;
+    /* Tamanho do ícone */
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-icon img:hover {
+    transform: scale(1.25);
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .whatsapp-icon img {
+        width: 55px;
+        /* Ajuste o tamanho do ícone em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-icon img {
+        width: 55px;
+        /* Ajuste ainda mais o tamanho em telas muito pequenas */
+    }
+}
