@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--<link rel="apple-touch-icon" sizes="180x180" href="logo/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="logo/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="logo/favicon-16x16.png">
+        <link rel="manifest" href="logo/site.webmanifest">
+        <link rel="mask-icon" href="logo/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">-->
+
+    <link rel="icon" href="./logo/favicon.ico" type="logo.ico">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, max-scale=1.0">
+    <title> If.Shoes > Login </title>
+
+    <!--------------- ARQUIVO CSS - HOMEPAGE --------------->
+
+    <link rel="stylesheet" href="./css/navbar.css">
+
+    <!---------- FONTE EXTERNO - CÓDIGO CSS: LOGIN E CADASTRO ---------->
+
+    <link rel="stylesheet" href="./css/login.css">
+
+    <!--------------- FONTE EXTERNO - CÓDIGO CSS: WHATSAPP PERCORRE A PAGINA PRINCIPAL --------------->
+
+    <link rel="stylesheet" href="./css/whatsapp.css">
+
+    <!--------------- ARQUIVO CSS - FOOTER --------------->
+
+    <link rel="stylesheet" href="./css/footer.css">
+
+    <!--------------- CDNJS - REDES SOCIAIS --------------->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!--------------- FONTE EXTERNO - GOOGLE (ROBOTO) --------------->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!--------------- CDNJS - SWIPER --------------->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+</head>
+
+<body>
+
+    <!--------------- INÍCIO DO CÓDIGO - HTML: CABEÇALHO DA PÁGINA --------------->
+
+    <header>
+
+        <div>
+            <ul class="acess_b">
+                <li><a href="#"> Acessibilidade </a></li>
+                <li><a href="#"> Tire as duvidas? </a></li>
+            </ul>
+        </div>
+
+
+        <div class="container_bar1">
+
+            <div class="navbar">
+                <a href="index.html" class="logo">IF.SHOES</a>
+
+                <div class="nav-links">
+
+                    <a href="#wishlist" class="nav-linka">
+                        <img src="./svg/wishlist2.ico" alt="Lista de Desejos">
+                        <p>LISTA DE DESEJOS</p>
+                    </a>
+                    <a href="#cart" class="nav-linka">
+                        <img src="./svg/cart.ico" alt="Carrinho">
+                        <p>CARRINHO</p>
+                    </a>
+                    <a href="cadastro.html" class="nav-linka">
+                        <img src="./svg/user-profile.ico" alt="Cadastro">
+                        <p>CADASTRO</p>
+                    </a>
+                    <a href="login.html" class="nav-linka">
+                        <img src="./svg/login3.ico" alt="Login">
+                        <p>LOGIN</p>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+
+    </header>
+
+    <hr>
+
+    <!--------------- FIM DO CÓDIGO - HTML: CABEÇALHO DA PÁGINA --------------->
+
+    <main class="container-login">
+
+        <!--------------- INÍCIO DO CÓDIGO - HTML: LOGIN + SENHA OU CADASTRO --------------->
+
+        <div class="container">
+
+            <div class="form-container login-container">
+                <form id="loginForm">
+                    <h2>Login</h2>
+                    <p>Digite os seus dados de acesso no campo abaixo.</p>
+                    <label for="loginEmail">E-mail:</label>
+                    <input type="email" id="loginEmail" name="email" required placeholder="Digite o seu e-mail">
+                    <span id="emailError" class="error-message"></span>
+
+                    <label for="loginPassword">Senha:</label>
+                    <input type="password" id="loginPassword" name="password" placeholder="Digite a sua senha">
+                    <span id="passwordError" class="error-message"></span>
+
+                    <button class="btn-entrar" type="submit">ENTRAR</button>
+                    <div class="esqueceuSenha">
+                        <a href="#">Esqueceu a Senha?</a>
+                    </div>
+                    <div class="social-buttons">
+                        <button id="facebookLogin" class="social-buttonFacebook">Login com Facebook</button>
+                        <button id="googleLogin" class="social-buttonGoogle">Login com Google</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <!--------------- FIM DO CÓDIGO - HTML: LOGIN + SENHA OU CADASTRO --------------->
+
+    </main>
+
+    <hr>
+
+    <!--------------- FIM DO CÓDIGO - HTML: BARRA DE INFORMAÇÃO (FRETE GRATIS) --------------->
+
+    <!--------------- INÍCIO DO CÓDIGO - HTML: FOOTER (RODAPÉ DA PAGINA) --------------->
+
+    <!--
+    <footer class="footer">
+    
+    </footer>
+    -->
+
+
+    <!--------------- CÓDIGO HTML: WHATSAPP SUSPENSO NA PÁGINA --------------->
+
+
+    <div class="whatsapp-icon">
+        <a href="https://wa.me/5511999999999" target="_blank" title="Fale conosco pelo WhatsApp">
+            <img src="svg/whatsapp-svg2.svg" alt="WhatsApp">
+        </a>
+    </div>
+
+    <h4 class="copyright">Copyright &copy; 2024 | TODOS OS DIREITOS RESERVADOS. </h4>
+
+    <div class="footerdev">
+        <p>Desenvolvido por - #### </p>
+    </div>
+
+
+    <!--------------- FIM DO CÓDIGO - HTML: FOOTER (RODAPÉ DA PAGINA) --------------->
+
+
+    <script src="/js/login.js"></script>
+    <script src="/js/app.js"></script>
+
+
+</body>
+
+</html>

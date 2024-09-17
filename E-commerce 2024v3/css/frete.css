@@ -1,0 +1,115 @@
+
+
+
+@charset "utf-8";
+
+@font-face {
+  font-family: "minhaFont";
+  src: url("/font/Roboto-Regular.ttf") format("truetype");
+  src: url("/font/MerriweatherSans-VariableFont_wght.ttf") format("truetype");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;900&display=swap');
+
+/* 
+
+----------------------------
+
+FONTES DE TEXTOS
+
+font-family: 'Roboto', sans-serif;
+font-family: 'Merriweather', serif;
+
+--------------------------
+
+PALETAS DE CORES - CSS ( RGB )
+
+
+#ff0000;
+#910404;
+#020202;
+#fffffe;
+#333333;
+#d8a600;
+#e59c00;
+#707070;
+#c2bebe;
+#007bff;
+#024892;
+#b6b6b6;
+#c5c5c5;
+#000000;
+
+
+--------------------------
+
+*/
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos gerais para a seção footer_frete */
+.footer_frete {
+  display: flex;
+  justify-content: space-around;
+  padding: 60px;
+  background-color: #910404;
+}
+
+.footer_frete_row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 30%;
+}
+
+.footer_frete_row img {
+  max-width: 120px;
+  margin-bottom: 18px;
+  text-shadow: 1px 1px 2px #5a5757;
+}
+
+.footer_frete_row h4 {
+  color: #ffffff;
+  margin: 5px 0;
+  font-size: 1.5em;
+  text-shadow: 1px 1px 2px #5a5757;
+}
+
+.footer_frete_row h5 {
+  color: #ffffff;
+  margin: 5px 0;
+  font-size: 1.3em;
+  text-shadow: 1px 1px 2px #5a5757;
+}
+
+/* Media query para telas menores */
+@media (max-width: 800px) {
+  .footer_frete {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer_frete_row {
+    width: 100%;
+    margin: 30px;
+  }
+
+  .footer_frete_row img {
+    max-width: 72px;
+  }
+
+  .footer_frete_row h4 {
+    font-size: 1.4em;
+  }
+
+  .footer_frete_row h5 {
+    font-size: 1.2em;
+  }
+}
