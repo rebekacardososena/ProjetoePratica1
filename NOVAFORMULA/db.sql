@@ -1,6 +1,12 @@
 CREATE DATABASE nodeGameTeste;
 USE nodeGameTeste;
 
+INSERT INTO Plataforma (plataformaNome) VALUES 
+    ('PlayStation 4'),
+    ('Xbox One'),
+    ('PC'),
+    ('Nintendo Switch');
+
 -- Tabela Plataforma
 CREATE TABLE Plataforma (
     plataformaID INT PRIMARY KEY AUTO_INCREMENT,
