@@ -1,0 +1,161 @@
+main {
+  min-height: 900px;
+  background: linear-gradient(
+    180deg,
+    #1d5d76 8.24%,
+    #142a3d 50.43%,
+    #141627 100%
+  );
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 42px;
+  text-align: center;
+  color: #ffff;
+  padding: 20px;
+}
+
+.container.mt-3.off-margin-search.d-flex.justify-content-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%; /* Garante que o contêiner ocupe toda a largura da tela */
+}
+
+form.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px; /* Define um limite máximo para o tamanho do formulário */
+  width: 100%; /* Garante que o formulário ocupe toda a largura disponível */
+}
+
+.search-tm {
+  min-height: 50px;
+  flex-grow: 1;
+  border-radius: 5px;
+  border: none;
+  padding-left: 20px;
+}
+
+.search-tm-btn {
+  background-color: #33a4f6;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.search-tm-btn:hover {
+  background-color: #007bff;
+}
+.section {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  padding: 0px;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+.dropdown-search {
+  margin-left: 40px;
+  margin-top: 20px;
+}
+
+.dropdown-toggle-search {
+  min-height: 70px;
+  background-color: #141627;
+  min-width: 170px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 240px;
+  height: 280px; /* Altura dos cards ajustada */
+  background-color: #263241;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1; /* Permite que o card-body cresça e preencha o espaço */
+}
+
+.card-title {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 10px;
+  min-height: 40px; /* Garante espaço para títulos maiores */
+}
+
+.btn-tamanho {
+  width: 100%;
+  background-color: #33a4f6; /* Cor de fundo ajustada */
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: auto; /* Alinha o botão na parte inferior */
+}
+
+.btn-tamanho:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .search-tm {
+    min-width: 300px;
+    margin-left: 0;
+  }
+  .card-container {
+    justify-content: center;
+  }
+  .card {
+    width: 100%;
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-tm {
+    min-width: 250px;
+  }
+  .dropdown-toggle-search {
+    min-width: 150px;
+  }
+}

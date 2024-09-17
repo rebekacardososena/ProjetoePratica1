@@ -1,0 +1,312 @@
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/menu.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/{{style}}" />
+
+    <title>{{about}}</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar custom-navbar navbar-dark">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasDarkNavbar"
+            aria-controls="offcanvasDarkNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="barra-header"></div>
+          <a href="http://localhost:3000" target="_self">
+            <img
+              src="/assets/header/nuvem-icon.png"
+              alt="nuuvem-logo"
+              class="nuuvem-logo"
+            />
+          </a>
+
+          <img
+            src="/assets/header/nuuvem.png"
+            alt="nuuvem"
+            class="nuuvem-name"
+          />
+          <div class="ms-auto">
+            <a href="http://localhost:3000/catalog" target="_self" class="lupa">
+              <img
+                src="/assets/header/icons8-lupa.png"
+                class="badge-header-icon"
+                alt="carrinho"
+              />
+            </a>
+            <a
+              href="http://localhost:3000/carrinho"
+              target="_self"
+              class="carrinho"
+            >
+              <img
+                src="/assets/header/icons8-carrinho.png"
+                class="badge-header-icon"
+                alt="carrinho"
+              />
+            </a>
+          </div>
+
+          <div
+            class="offcanvas offcanvas-start text-bg-dark"
+            tabindex="-1"
+            id="offcanvasDarkNavbar"
+            aria-labelledby="offcanvasDarkNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                Menu
+              </h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="/assets/menu/icons8-etiqueta-promo-cinza.png"
+                      alt="promoção"
+                      class="menu-img"
+                    />
+                    Promoções
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="http://localhost:3000"
+                        target="_self"
+                      >
+                        Todas as promoções
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="http://localhost:3000/catalog/price/50"
+                      >
+                        Abaixo de R$ 50,00
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="/assets/menu/icons8-pc.png"
+                      alt="promoção"
+                      class="menu-img"
+                    />
+                    PC
+                  </a>
+
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="http://localhost:3000/catalog/3"
+                      >
+                        Todos os jogos
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="http://localhost:3000">
+                        Pré venda
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="http://localhost:3000">
+                        Lançamentos
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    aria-current="page"
+                    href="http://localhost:3000/catalog/1"
+                  >
+                    <img
+                      src="/assets/menu/icons8-play-station.png"
+                      alt="promoção"
+                      class="menu-img"
+                    />
+                    PlayStation
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    aria-current="page"
+                    href="http://localhost:3000/catalog/2"
+                  >
+                    <img
+                      src="/assets/menu/icons8-xbox.png"
+                      alt="promoção"
+                      class="menu-img"
+                    />
+                    Xbox
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    aria-current="page"
+                    href="http://localhost:3000/catalog/4"
+                  >
+                    <img
+                      src="/assets/menu/icons8-logotipo-do-nintendo-switch.png"
+                      alt="promoção"
+                      class="menu-img"
+                    />
+                    Switch
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    aria-current="page"
+                    href="http://localhost:3000/login"
+                  >
+                    <img
+                      src="/assets/menu/icons8-usuário.png"
+                      alt="promoção"
+                      class="menu-img"
+                    />
+                    Entrar
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    aria-current="page"
+                    href="http://localhost:3000/perfil/4"
+                  >
+                    <img
+                      src="/assets/menu/icons8-usuário-homem-com-círculo-96.png"
+                      alt="promoção"
+                      class="menu-img"
+                    />
+                    Perfil
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      {{{body}}}
+    </main>
+    <footer class="footer">
+      <ul class="footer-list">
+        <li>Suporte</li>
+        <li>Blog</li>
+        <li>Carreira</li>
+        <li>Seu jogo na nuuvem</li>
+        <li>Nuuvem Co op</li>
+      </ul>
+      <div class="enfeite"></div>
+      <h5 class="ft-h5">ACOMPANHE-NOS</h5>
+      <div class="social-links">
+        <a
+          href="https://www.facebook.com/nuuvembrasil"
+          target="_blank"
+          class="badge"
+        >
+          <img
+            src="/assets/footer/icons/icons8-facebook.png"
+            class="badge-icon"
+            alt="facebook"
+          />
+          Facebook
+        </a>
+        <a
+          href="https://www.youtube.com/user/Nuuvem"
+          target="_blank"
+          class="badge"
+        >
+          <img
+            src="/assets/footer/icons/icons8-reproduzir-youtube.png"
+            class="badge-icon"
+            alt="youtube"
+          />
+          Youtube
+        </a>
+        <a
+          href="https://www.instagram.com/nuuvem"
+          target="_blank"
+          class="badge"
+        >
+          <img
+            src="/assets/footer/icons/icons8-instagram.png"
+            class="badge-icon"
+            alt="instagram"
+          />
+          Instagram
+        </a>
+        <a href="https://twitter.com/nuuvem" target="_blank" class="badge">
+          <img
+            src="/assets/footer/icons/icons8-twitter.png"
+            class="badge-icon"
+            alt="twitter"
+          />
+          Twitter
+        </a>
+      </div>
+      <p class="cnpjto">
+        Nuuvem Ltda. - CNPJ 17.126.332/0001-10
+        <br />Rua Lauro Müller, n° 116, sala 503 - Torre do Rio Sul - Botafogo -
+        Rio de Janeiro, RJ - 22290-160
+      </p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    >
+      console.log("Estilo:",
+      {{style}});
+    </script>
+  </body>
+</html>

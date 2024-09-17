@@ -1,0 +1,22 @@
+.menu-img {
+  max-width: 21px;
+  max-height: 24px;
+}
+
+/* Responsividade */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .menu-img {
+    max-width: 28px;
+    max-height: 30px;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 576px) {
+  .menu-img {
+    max-width: 24px;
+    max-height: 28px;
+  }
+}

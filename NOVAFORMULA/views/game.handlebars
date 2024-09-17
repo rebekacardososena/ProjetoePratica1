@@ -1,0 +1,57 @@
+<div class="game-header">
+  <img
+    src="{{jogo.jogosImg}}"
+    alt="{{jogo.jogosNome}}"
+    class="game-thumbnail"
+  />
+  <div class="game-title-group">
+    <h1 class="game-title">{{jogo.jogosNome}}</h1>
+  </div>
+</div>
+
+<div class="game-content">
+  <iframe
+    src="{{jogo.jogosTrailer}}"
+    class="video"
+    frameborder="0"
+    allowfullscreen
+  ></iframe>
+
+  <div class="game-info">
+    <div class="price-section">
+      <span class="discount-badge">-95%</span>
+      <span class="old-price">R$ 129,99</span>
+      <h2 class="current-price">R$ {{jogo.jogosPrice}}</h2>
+      <div class="offer-timer">Oferta acaba em: 10D 23:30:38</div>
+    </div>
+
+    <p class="game-description">{{jogo.jogosDescricao}}</p>
+
+    <div class="game-meta">
+      <p><strong>Desenvolvedor:</strong> {{jogo.jogosDesenvolvedora}}</p>
+      <p><strong>Categoria:</strong> {{jogo.jogosCategories}}</p>
+    </div>
+
+    <form action="/insert/carrinho" method="POST">
+      <input type="hidden" name="id" value="{{jogo.jogosID}}" />
+      <div class="btn-group">
+        <button class="btn btn-primary" name="compra" type="submit">
+          Comprar
+          <img
+            src="/assets/home/icons/icons8-comprar-60.png"
+            alt="Comprar"
+            class="icon-star"
+          />
+        </button>
+        <a href="#" class="btn btn-secondary" name="desejo">
+          Desejo
+          <img
+            src="/assets/home/icons/icons8-coração-100.png"
+            alt="Desejo"
+            class="icon-star"
+          />
+        </a>
+      </div>
+    </form>
+  </div>
+</div>

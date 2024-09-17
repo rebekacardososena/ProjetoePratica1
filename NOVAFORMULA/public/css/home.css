@@ -1,0 +1,195 @@
+/* Tema Claro */
+.light-theme main {
+  background: linear-gradient(
+    180deg,
+    #ffffff 8.24%,
+    #e0e0e0 50.43%,
+    #c0c0c0 100%
+  );
+}
+
+.light-theme .stamp {
+  background-color: #f0f0f0;
+}
+
+.light-theme .stamp h5,
+.light-theme .m-title,
+.light-theme .card-title {
+  color: #333;
+}
+
+.light-theme .card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .btn-tamanho {
+  background-color: #1d5d76;
+}
+
+.light-theme .btn-tamanho:hover {
+  background-color: #142a3d;
+}
+
+/* Tema Escuro */
+.dark-theme main {
+  background: linear-gradient(
+    180deg,
+    #1d5d76 8.24%,
+    #142a3d 50.43%,
+    #141627 100%
+  );
+}
+
+.dark-theme .stamp {
+  background-color: #141627;
+}
+
+.dark-theme .stamp h5,
+.dark-theme .m-title,
+.dark-theme .card-title {
+  color: #fff;
+}
+
+.dark-theme .card {
+  background-color: #263241;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .btn-tamanho {
+  background-color: #33a4f6;
+}
+
+.dark-theme .btn-tamanho:hover {
+  background-color: #1d8cd2;
+}
+
+/* Estilos comuns */
+.c-item {
+  height: 480px;
+}
+
+.c-img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-indicators li {
+  color: transparent;
+}
+
+.stamp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  max-width: 1200px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 40px auto;
+}
+
+.stamp ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+}
+
+.stamp li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stamp p {
+  color: #33a4f6;
+  margin: 0;
+}
+
+.stamp-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 10px;
+}
+
+#themeButton {
+  margin: 10px;
+}
+
+.separation-bar-stamp {
+  width: 3px;
+  height: 90px;
+  border-radius: 2px;
+  background-color: #142a3d;
+}
+
+.m-title {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.banner {
+  height: 200px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+.b-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 0;
+}
+
+.card {
+  width: 240px;
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.card-title {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.btn-tamanho {
+  width: 180px;
+  font-weight: bold;
+  margin-top: 10px;
+  border: none;
+  text-align: center;
+}
+
+.btn-tamanho:hover {
+  color: #fff;
+  transition: background-color 0.3s ease;
+}

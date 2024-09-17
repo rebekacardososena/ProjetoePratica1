@@ -1,0 +1,126 @@
+.nuuvem-logo {
+  width: 42px;
+  height: 43px;
+  position: absolute;
+  top: 25px;
+  left: 117px;
+}
+
+.nuuvem-name {
+  width: 142px;
+  height: 53px;
+  position: absolute;
+  top: 20px;
+  left: 177px;
+}
+
+.barra-header {
+  height: 54px;
+  width: 3px;
+  background-color: #d9d9d95a;
+  border-radius: 2px;
+  position: absolute;
+  top: 20px;
+  left: 100px;
+}
+
+.logo-img {
+  width: 42px;
+  height: 38px;
+}
+
+h1 {
+  text-align: left;
+}
+
+.custom-navbar {
+  background-color: #151d27;
+  color: #fff;
+  min-height: 90px;
+  position: relative;
+}
+
+.carrinho {
+  margin-right: 10px;
+}
+
+.lupa {
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.badge-header-icon {
+  width: 39px;
+  height: 39px;
+}
+
+/* Responsividade */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .nuuvem-logo {
+    width: 36px;
+    height: 37px;
+    top: 20px;
+    left: 80px;
+  }
+
+  .nuuvem-name {
+    width: 120px;
+    height: 45px;
+    top: 18px;
+    left: 130px;
+  }
+
+  .barra-header {
+    height: 50px;
+    top: 18px;
+    left: 60px;
+  }
+
+  .custom-navbar {
+    min-height: 70px;
+  }
+
+  .badge-header-icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 576px) {
+  .nuuvem-logo {
+    width: 30px;
+    height: 31px;
+    top: 15px;
+    left: 20px;
+  }
+
+  .nuuvem-name {
+    width: 100px;
+    height: 40px;
+    top: 15px;
+    left: 60px;
+  }
+
+  .barra-header {
+    height: 45px;
+    top: 15px;
+    left: 10px;
+  }
+
+  .custom-navbar {
+    min-height: 60px;
+  }
+
+  .badge-header-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .carrinho,
+  .lupa {
+    margin-right: 5px;
+  }
+}

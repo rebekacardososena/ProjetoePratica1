@@ -1,0 +1,144 @@
+.footer {
+  min-height: 300px;
+  background-color: #010611;
+  color: #fff;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.footer-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding-top: 7px;
+}
+
+.enfeite {
+  margin: 0 auto;
+  width: 80%;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #d9d9d95a;
+}
+
+.ft-h5 {
+  font-size: 28px;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cnpjto {
+  margin-top: 30px;
+  font-size: 12px;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.badge {
+  padding: 10px 15px;
+  text-decoration: none;
+  background: #263241;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.badge-icon {
+  width: 29px;
+  height: 29px;
+  margin-right: 10px;
+}
+
+/* Responsividade */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .footer-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ft-h5 {
+    font-size: 24px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .social-links {
+    gap: 15px;
+  }
+
+  .badge {
+    padding: 8px 12px;
+  }
+
+  .badge-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .enfeite {
+    display: none;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 576px) {
+  .footer {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .footer-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ft-h5 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .social-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cnpjto {
+    font-size: 10px;
+    margin-top: 20px;
+  }
+
+  .badge {
+    padding: 6px 10px;
+  }
+
+  .badge-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+
+  .enfeite {
+    display: none;
+  }
+}

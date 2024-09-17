@@ -1,0 +1,43 @@
+<h1>Atualizar senha</h1>
+<section>
+  <div class="update-container">
+    <form action="/user/update" method="POST">
+      <div class="form-group">
+        <input type="hidden" name="userID" value="{{register.userID}}" />
+        <label for="name" class="input-color">Nome</label>
+        <input
+          type="text"
+          name="name"
+          class="form-control"
+          placeholder="Insira seu nome"
+          value="{{register.userName}}"
+          readonly
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="input-color">Email</label>
+        <input
+          type="email"
+          name="email"
+          class="form-control"
+          placeholder="Insira seu email"
+          value="{{register.userEmail}}"
+          readonly
+        />
+      </div>
+      <div class="form-group">
+        <label for="password" class="input-color">Senha</label>
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          placeholder="Insira sua senha"
+          value="{{register.userPassword}}"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-info btn-update">Alterar senha</button>
+    </form>
+  </div>
+</section>

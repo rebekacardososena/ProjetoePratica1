@@ -1,0 +1,290 @@
+main {
+  min-height: 600px;
+  background: linear-gradient(
+    180deg,
+    #1d5d76 8.24%,
+    #142a3d 50.43%,
+    #141627 100%
+  );
+}
+
+.game-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.game-thumbnail {
+  width: 250px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+.game-title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.game-title {
+  font-size: 36px;
+  color: #fff;
+  font-weight: bold;
+  margin: 0;
+}
+
+.platform-icons {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.platform-icons img {
+  height: 32px;
+  margin-right: 10px;
+}
+
+.game-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.video {
+  width: 720px;
+  height: 385px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.game-info {
+  background-color: #141627;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 100%;
+}
+
+.price-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.discount-badge {
+  background-color: #ff5f5f;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-bottom: 5px;
+}
+
+.current-price {
+  font-size: 28px;
+  color: #fff;
+  font-weight: bold;
+  margin: 0;
+}
+
+.offer-timer {
+  margin-top: 10px;
+  color: #ff5f5f;
+  font-size: 14px;
+}
+
+.game-description {
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.game-meta {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.activation-link {
+  color: #33a4f6;
+  text-decoration: none;
+}
+
+.activation-link:hover {
+  text-decoration: underline;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn {
+  width: 28%;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #ff5f5f;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #ff0000;
+}
+
+.btn-secondary {
+  background-color: #141627;
+  color: #fff;
+  border: 1px solid #33a4f6;
+}
+
+.btn-secondary:hover {
+  background-color: #1d5d76;
+}
+
+.other-editions {
+  margin-top: 40px;
+}
+
+.other-editions h3 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.edition-list {
+  display: flex;
+  gap: 20px;
+}
+
+.icon-star {
+  width: 30px;
+}
+
+.edition-item {
+  background-color: #263241;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 180px;
+}
+
+.edition-item img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.edition-info h4 {
+  font-size: 18px;
+  color: #fff;
+  margin: 0;
+}
+
+.edition-price {
+  font-size: 16px;
+  color: #ff5f5f;
+  margin-top: 10px;
+}
+
+/* Responsividade */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .game-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video {
+    width: 100%;
+    height: auto;
+  }
+
+  .game-info {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .game-thumbnail {
+    width: 80px;
+  }
+
+  .game-title {
+    font-size: 28px;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 576px) {
+  .game-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .game-thumbnail {
+    margin-bottom: 15px;
+  }
+
+  .game-title {
+    font-size: 24px;
+  }
+
+  .platform-icons {
+    justify-content: center;
+    margin-top: 5px;
+  }
+
+  .platform-icons img {
+    height: 20px;
+  }
+
+  .game-content {
+    padding: 10px;
+  }
+
+  .video {
+    width: 100%;
+  }
+
+  .game-info {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .btn {
+    padding: 12px 0;
+    font-size: 16px;
+  }
+
+  .other-editions h3 {
+    font-size: 20px;
+  }
+
+  .edition-list {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .edition-item {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,159 @@
+main {
+  min-height: 800px;
+  background: #142a3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: #263241;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.fb {
+  background: #1877f2;
+}
+
+.google {
+  background: #ffffff;
+}
+
+.fb-inside,
+.google-inside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.fb-inside {
+  color: #ffffff;
+}
+
+.google-inside {
+  color: #000000;
+}
+
+.icon-login {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.enfeite-login {
+  width: 100%;
+  height: 3px;
+  background: #151d27;
+  margin: 20px 0;
+}
+
+.input-color {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  background: #1d2836;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.form-control::placeholder {
+  color: #acacac;
+}
+
+.btn-login {
+  width: 100%;
+  background-color: #33a4f6;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: #007bff;
+}
+
+.login-base {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.link {
+  text-decoration: none;
+  color: #acacac;
+  font-size: 14px;
+}
+
+/* Responsividade */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 15px;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  .icon-login {
+    width: 20px;
+    height: 20px;
+  }
+
+  .btn-login {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .link {
+    font-size: 12px;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 576px) {
+  .login-container {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .btn-login {
+    font-size: 14px;
+  }
+
+  .link {
+    font-size: 12px;
+  }
+}
